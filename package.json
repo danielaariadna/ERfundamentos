@@ -1,0 +1,15 @@
+{
+  "name": "erfundamentos",
+  "version": "1.0.0",
+  "description": "Ejercicio 6 TP2 Fundamentos. Por Valentina Ochoa y Daniela Morales",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Valentina Ochoa y Daniela Morales",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
