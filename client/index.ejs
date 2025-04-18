@@ -2,21 +2,51 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title><%= title || "Inicio" %></title>
+  <title>TicketScannerJS</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1><%= header || "Hola Mundo desde EJS" %></h1>
-  <p><%= message || "Bienvenido a mi sitio web con Node.js y EJS" %></p>
+  <h1>🧾 Analizador de Tickets</h1>
 
-  <ul>
-    <% if (products && products.length) { %>
-      <% products.forEach(product => { %>
-        <li><%= product.name %> - $<%= product.price %></li>
-      <% }) %>
-    <% } else { %>
-      <li>No hay productos disponibles.</li>
-    <% } %>
+  <form id="form-ticket">
+    <label>Número de Ticket:</label>
+    <input type="text" id="num-ticket"><br>
+  
+    <label>Fecha:</label>
+    <input type="text" id="fecha"><br>
+  
+    <label>Monto Total:</label>
+    <input type="text" id="monto"><br>
+  
+    <label>Nombre y Apellido:</label>
+    <input type="text" id="nombre"><br>
+  
+    <label>DNI:</label>
+    <input type="text" id="dni"><br>
+  
+    <label>Email:</label>
+    <input type="text" id="email"><br>
+  
+    <button type="submit">Cargar Ticket</button>
+  </form>
+  
+  <hr>
+
+  <h2>🧠 Resultado del análisis</h2>
+  <div id="resultado">
+    <!-- Aquí se insertarán los datos extraídos -->
+  </div>
+
+  <hr>
+
+  <h2>🎟️ Tickets almacenados</h2>
+  <ul id="lista-tickets">
+    <!-- Se insertarán los tickets desde el backend -->
   </ul>
+
+  <button id="sorteo-btn">🎉 Realizar sorteo</button>
+  <p id="ganador"></p>
+
+  <script src="/script.js"></script>
 </body>
 </html>
