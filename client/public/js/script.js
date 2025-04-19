@@ -20,7 +20,7 @@ function validarNyA(nya){
     }
     
     //integro las funciones al formulario
-    document.getElementById('form-ticket').addEventListener('submite', function(e){
+    document.getElementById('form-ticket').addEventListener('submit', function(e){
         e.preventDefault();
     
         //obtengo los valores
