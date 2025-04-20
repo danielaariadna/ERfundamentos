@@ -19,6 +19,29 @@ function validarNyA(nya){
         return exreg.test(email.trim());
     }
     
+    //movimiento de las pestañas
+    function openTab(tabId,event=null) {
+        // oculta todos los contenidos de pestañas
+        const tabContent = document.querySelectorAll('.tab-content');
+        tabContent.forEach(content => {
+          content.style.display = 'none';
+        });
+        
+        // desactiv todos los botones de pestañas
+        const tabBtn = document.querySelectorAll('.tab-btn');
+        tabBtn.forEach(button => {
+          button.classList.remove('active');
+        });
+        
+        // muestra la pestaña actual y activa su botón
+        document.getElementById(tabId).style.display = 'block';
+        if(event && event.classList){
+        event.currentTarget.classList.add('active');
+        }else{
+            document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('active');
+        }
+    }
+      
     //integro las funciones al formulario
     document.getElementById('form-ticket').addEventListener('submit', function(e){
         e.preventDefault();
@@ -46,4 +69,10 @@ function validarNyA(nya){
         } else {
             //mostrar en la interfaz de que no se puede enviar el form
         }
+    });
+
+    ///DOM
+    document.addEventListener('DOMContentLoaded', function() {
+        openTab('cargar-ticket'); //LPM ME DA MUCHOS ERRORESSSSSSSSSSSSSS
+        
     });
