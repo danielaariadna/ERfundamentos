@@ -3,51 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>TicketScannerJS</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <h1>🧾 Analizador de Tickets</h1>
 
-  <form id="form-ticket">
-    <label>Número de Ticket:</label>
-    <input type="text" id="num-ticket"><br>
-  
-    <label>Fecha:</label>
-    <input type="date" id="fecha"><br>
-  
-    <label>Monto Total:</label>
-    <input type="text" id="monto"><br>
-  
-    <label>Nombre y Apellido:</label>
-    <input type="text" id="nombre"><br>
-  
-    <label>DNI:</label>
-    <input type="text" id="dni"><br>
-  
-    <label>Email:</label>
-    <input type="text" id="email"><br>
-  
-    <button type="submit">Cargar Ticket</button>
-  </form>
-  
-  <hr>
 
-  <h2>🧠 Resultado del análisis</h2>
-  <div id="resultado">
+ 
     <!-- Aquí se insertarán los datos extraídos -->
+  <nav class="deco-navbar"> <!--porq es de decoracion jeje-->
+    <div class=""></div> <!--aca pondria los iconos que me faltan basandome en el diseño de figma, buscar imagenes vectorizadas-->
+  </nav>
+  <!-- Pestañas -->
+  <div class="tabs">
+    <button class="tab-btn" data-tab="cargar-ticket" onclick="openTab('cargar-ticket',this)">Cargar Ticket</button>
+    <button class="tab-btn" data-tab="tickets-guardados" onclick="openTab('tickets-guardados',this)">Tickets Guardados</button>
+    <button class="tab-btn" data-tab="sorteo" onclick="openTab('sorteo',this)">Sorteo</button>
   </div>
 
-  <hr>
+  <!-- Contenido de las pestañas -->
+  <div id="cargar-ticket" class="tab-content" style="display: block;">
+    <form id="form-ticket">
+      <label>Número de Ticket:</label>
+      <input type="text" id="num-ticket" placeholder="AA-12345670"><br>
+    
+      <label>Fecha:</label>
+      <input type="date" id="fecha" placeholder="dd-mm-aaaa"><br>
+    
+      <label>Monto Total:</label>
+      <input type="number" id="monto" placeholder="000.0" step="0.01"><br>
+    
+      <label>Nombre y Apellido:</label>
+      <input type="text" id="nombre" placeholder="Juan Perez"><br>
+    
+      <label>DNI:</label>
+      <input type="text" id="dni" placeholder="12345678"><br>
+    
+      <label>Email:</label>
+      <input type="email" id="email" placeholder="nombre@email.com"><br>
+    
+      <button type="submit">Cargar Ticket</button>
+    </form>
+  
+  </div>
 
-  <h2>🎟️ Tickets almacenados</h2>
-  <ul id="lista-tickets">
-    <!-- Se insertarán los tickets desde el backend -->
-  </ul>
 
-  <button id="sorteo-btn">🎉 Realizar sorteo</button>
-  <p id="ganador"></p>
+  <div id="tickets-guardados" class="tab-content">
+    <h2>🎟️ Tickets almacenados</h2>
+    <ul id="lista-tickets">
+    </ul>
+  </div>
 
-  <script src="/script.js"></script>
+  <div id="sorteo" class="tab-content">
+    <h2>🎉 Realizar sorteo</h2>
+    <button id="sorteo-btn">Seleccionar ganador</button>
+    <p id="ganador"></p>
+  </div>
+
   <script src="/js/script.js"></script>
 </body>
 </html>
