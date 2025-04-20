@@ -18,22 +18,50 @@ function validarNyA(nya){
         const exreg= /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         return exreg.test(email.trim());
     }
+
+    function validarNumeroTicket(numero) {
+        const exreg = /^AA-\d{5}$/;
+        return exreg.test(numero.trim());
+      }
+    
+    function validarMonto(monto) {
+        const exreg = /^\d+(\.\d{2})$/; // Número con decimales obligatorios (2 cifras)
+        if (!exreg.test(monto.trim())) return false;
+      
+        const montoNumerico = parseFloat(monto);
+        return montoNumerico > 1000;
+      }
+      
+    function validarFechaConRegex(fecha) {
+        // Formato esperado: AAAA-MM-DD
+        const exreg = /^2025-04-(0[1-9]|1[0-9]|2[0-2])$/;
+        return exreg.test(fecha.trim());
+      }
     
     //integro las funciones al formulario
     document.getElementById('form-ticket').addEventListener('submit', function(e){
         e.preventDefault();
     
         //obtengo los valores
+        const numero = document.getElementById('num-ticket').value;
+        const monto = document.getElementById('monto').value;
+        const fecha = document.getElementById('fecha').value;
         const nya=document.getElementById('nombre').value;
         const dni=document.getElementById('dni').value;
         const email=document.getElementById('email').value;
     
         //valido los datos
+        const esNumeroValido = validarNumeroTicket(numero);
+        const esMontoValido = validarMonto(monto);
+        const esFechaValida = validarFechaConRegex(fecha);
         const esNyAValido=validarNyA(nya);
         const esDNIValido=validarDNI(dni);
         const esEmailValido=validarEmail(email);
     
         //muestro por consola pa verificar (BORRAR DESPUES Y HACERLO POR LA INTERFAZ)
+        console.log('Número de ticket válido:', esNumeroValido);
+        console.log('Monto válido:', esMontoValido);
+        console.log('Fecha válida:', esFechaValida);
         console.log('Nombre y Apellido valido:', esNyAValido);
         console.log('DNI valido:', esDNIValido);
         console.log('Email valido:', esEmailValido);
@@ -41,9 +69,11 @@ function validarNyA(nya){
         
         //si todo es valido se envia el form, agregar los de dani!!
     
-        if(esNyAValido && esDNIValido && esEmailValido){
-            //son validos guardar en un txt
-        } else {
-            //mostrar en la interfaz de que no se puede enviar el form
-        }
+        if (esNyAValido && esDNIValido && esEmailValido && esNumeroValido && esMontoValido && esFechaValida) {
+            alert('✅ ¡Todos los datos son válidos! Guardando...');
+            // Aquí podrías guardar en TXT o hacer un fetch a tu backend
+          } else {
+            alert('❌ Algunos datos no son válidos. Por favor, revisalos.');
+            // También podrías mostrar qué campos fallaron si querés
+          }
     });
