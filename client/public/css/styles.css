@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deco-navbar {
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* Altura del navbar */
+  background-color: #D11C1C; /* Rojo sólido */
+  display: flex;
+  /*justify-content: center;
+  align-items: center;
+  gap: 40px; lo comento porq todavia no hay nada, espacio entre íconos */
+  z-index: 1; 
+}
+/* pestañas mejoradas */
+.tabs {
+    display: flex;
+    position: fixed;
+    margin-top: 50px;
+    gap: 5px;
+    width: 100%;
+    max-width: 800px;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 16px;
+    background-color: rgb(255, 255, 255);
+    border-color: #951616;
+    color: rgba(209, 28, 28, 0.9);
+    border-radius: 5px 5px 0 0;
+    flex-grow: 1;
+    max-width: 200px;
+    text-align: center;
+}
+
+.tab-btn:hover {
+    background-color: rgba(116, 35, 35, 0.8);
+    color: white;
+}
+
+.tab-btn.active {
+    background-color: rgba(209, 28, 28, 0.9);
+    color: white;
+    font-weight: bold;
+}
+
+.tab-content, #form-ticket {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    max-width: 600px;
+}
+
+#form-ticket {
+    padding: 30px;
+    border-radius: 10px;
+    margin: 70px auto;
+}
+
+#form-ticket label {
+    display: block;
+    margin-top: 15px;
+    color: rgb(4, 4, 4);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#form-ticket input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: rgba(233, 189, 189, 0.9);
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    color: #951616;
+    font-style: normal; 
+    opacity: 0.8;
+  }
+/* Botones mejorados */
+#form-ticket button, #sorteo-btn {
+    background-color: rgba(209, 28, 28, 0.9);
+    color: white;
+    border: none;
+    padding: 14px;
+    margin-top: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#form-ticket button:hover, #sorteo-btn:hover {
+    background-color: rgba(116, 35, 35, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#tickets-guardados {
+    margin: 80px auto;
+
+}
+
+#sorteo{
+    margin: 80px auto;
+
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    
+    #form-ticket {
+        padding: 20px 15px;
+    }
+}
