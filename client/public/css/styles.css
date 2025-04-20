@@ -8,12 +8,13 @@ body {
     align-items: center;
 }
 
+
 .deco-navbar {
     position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px; /* Altura del navbar */
+  height: 80px; /* Altura del navbar */
   background-color: #D11C1C; /* Rojo sólido */
   display: flex;
   /*justify-content: center;
@@ -21,11 +22,15 @@ body {
   gap: 40px; lo comento porq todavia no hay nada, espacio entre íconos */
   z-index: 1; 
 }
+
+
 /* pestañas mejoradas */
 .tabs {
     display: flex;
     position: fixed;
-    margin-top: 50px;
+    justify-content: space-between;
+    margin-left: 50px;
+    margin-top: 70px;
     gap: 5px;
     width: 100%;
     max-width: 800px;
@@ -40,9 +45,9 @@ body {
     cursor: pointer;
     transition: all 0.3s;
     font-size: 16px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(192, 151, 151);
     border-color: #951616;
-    color: rgba(209, 28, 28, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     border-radius: 5px 5px 0 0;
     flex-grow: 1;
     max-width: 200px;
@@ -59,7 +64,14 @@ body {
     color: white;
     font-weight: bold;
 }
-
+.tab-content {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 70px; /* Ajusta el margen superior para que quede debajo de las pestañas */
+    
+}
 .tab-content, #form-ticket {
     background-color: transparent;
     border: none;
@@ -68,14 +80,15 @@ body {
 }
 
 #form-ticket {
+    margin-top: 100px;
     padding: 30px;
     border-radius: 10px;
-    margin: 70px auto;
+    margin: 20px auto;
 }
 
 #form-ticket label {
     display: block;
-    margin-top: 15px;
+    margin-top: 20px;
     color: rgb(4, 4, 4);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -120,12 +133,12 @@ input::placeholder {
 }
 
 #tickets-guardados {
-    margin: 80px auto;
+    margin: 90px auto;
 
 }
 
 #sorteo{
-    margin: 80px auto;
+    margin: 90px auto;
 
 }
 /* Responsive */
@@ -145,3 +158,143 @@ input::placeholder {
         padding: 20px 15px;
     }
 }
+
+/* Navbar mejorado */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 80px;
+  }
+  
+  .logo {
+    font-style: italic;
+    font-weight: 800;
+    color: white;
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .divider {
+    height: 30px;
+    width: 1px;
+    background-color: white;
+  }
+  
+  .categorias {
+    font-style: italic;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .navbar-search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar-search input {
+    padding: 12px 15px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    width: 80%;
+    max-width: 660px;
+    outline: none;
+  }
+  
+  .navbar-search button {
+    padding: 9.5px 12px;
+    background-color: white;
+    color: #D11C1C;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-right: 80px;
+  }
+
+  .icono {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .icono p {
+    margin: 0;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .icon-img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  
+  .icon-imglupa {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    transform: scale(1.5);
+  }
+
+  footer {
+    background-color: #f9f9f9;
+    
+    width: 100%;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: none; /* <--- Esto es clave */
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  
+  .footer-section h4 {
+    color: #d11c1c;
+    margin-bottom: 10px;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .social-icons a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+  

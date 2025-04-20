@@ -10,9 +10,33 @@
 
  
     <!-- Aquí se insertarán los datos extraídos -->
-  <nav class="deco-navbar"> <!--porq es de decoracion jeje-->
-    <div class=""></div> <!--aca pondria los iconos que me faltan basandome en el diseño de figma, buscar imagenes vectorizadas-->
-  </nav>
+    <nav class="deco-navbar">
+      <div class="navbar-left">
+        <h1 class="logo">NOCHE</h1>
+        <div class="divider"></div>
+        <div class="categorias">
+          ☰ <span>Categorías</span>
+        </div>
+      </div>
+    
+      <div class="navbar-search">
+        <input type="text" placeholder="Buscar..." />
+        <button> <img src="/img/lupa.png" alt="Lupa" class="icon-imglupa"></button>
+      </div>
+    
+      <div class="navbar-right">
+        <div class="icono">
+          <img src="/img/carrito.png" alt="Carrito" class="icon-img">
+          <p>Carrito</p>
+        </div>
+        <div class="icono">
+          <img src="/img/perfil.png" alt="Usuario" class="icon-img">
+          <p>Ingresar</p>
+        </div>
+      </div>
+    </nav>
+
+
   <!-- Pestañas -->
   <div class="tabs">
     <button class="tab-btn" data-tab="cargar-ticket" onclick="openTab('cargar-ticket',this)">Cargar Ticket</button>
@@ -24,7 +48,7 @@
   <div id="cargar-ticket" class="tab-content" style="display: block;">
     <form id="form-ticket">
       <label>Número de Ticket:</label>
-      <input type="text" id="num-ticket" placeholder="AA-12345670"><br>
+      <input type="text" id="num-ticket" placeholder="AA-123456"><br>
     
       <label>Fecha:</label>
       <input type="date" id="fecha" placeholder="dd-mm-aaaa"><br>
@@ -59,6 +83,47 @@
     <p id="ganador"></p>
   </div>
 
-  <script src="/js/script.js"></script>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h4>Sobre Nosotros</h4>
+        <ul>
+          <li><a href="#">Quiénes somos</a></li>
+          <li><a href="#">Trabajá con nosotros</a></li>
+          <li><a href="#">Sustentabilidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#">Atención al cliente</a></li>
+          <li><a href="#">Sucursales</a></li>
+          <li><a href="#">Formulario de contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Seguinos</h4>
+        <div class="social-icons">
+          <a href="#"><img src="/img/facebook.png" alt="Facebook" /></a>
+          <a href="#"><img src="/img/tw.png" alt="Twitter" /></a>
+          <a href="#"><img src="/img/instagram.png" alt="Instagram" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Supermercados NOCHE. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
 </body>
+<script src="/js/script.js"></script>
 </html>
