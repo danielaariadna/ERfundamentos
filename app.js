@@ -13,11 +13,11 @@ app.use(express.json());
 
 // Configurar el motor de vistas 'ejs' y la ubicación de las vistas
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../client'));
+app.set('views', path.join(__dirname, ''));
 
 // Configurar Express para servir archivos estáticos desde los directorios correspondientes
 
-app.use(express.static(path.join(__dirname, '../client/public')));
+app.use(express.static(path.join(__dirname, '')));
 
 // Utilizar las rutas definidas en el módulo 'router'
 app.use('/', router);
