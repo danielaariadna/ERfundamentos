@@ -6,11 +6,8 @@
   <link rel="stylesheet" href="client/public/css/styles.css">
 </head>
 <body>
-
-
- 
-    <!-- Aquí se insertarán los datos extraídos -->
-    <nav class="deco-navbar">
+  
+      <nav class="deco-navbar">
       <div class="navbar-left">
         <h1 class="logo">NOCHE</h1>
         <div class="divider"></div>
@@ -37,34 +34,40 @@
     </nav>
 
 
-  <!-- Pestañas -->
+  <!-- pestañas -->
   <div class="tabs">
     <button class="tab-btn" data-tab="cargar-ticket" onclick="openTab('cargar-ticket',this)">Cargar Ticket</button>
     <button class="tab-btn" data-tab="tickets-guardados" onclick="openTab('tickets-guardados',this)">Tickets Guardados</button>
     <button class="tab-btn" data-tab="sorteo" onclick="openTab('sorteo',this)">Sorteo</button>
   </div>
 
-  <!-- Contenido de las pestañas -->
+  <!-- contenido de las pestañas -->
   <div id="cargar-ticket" class="tab-content" style="display: block;">
     <form id="form-ticket">
       <label>Número de Ticket:</label>
-      <input type="text" id="num-ticket" placeholder="AA-123456"><br>
-    
+      <input type="text" id="num-ticket" placeholder="AA-12345"><br>
+      <span id="error-num-ticket" class="error" style="color:red"></span>
+
       <label>Fecha:</label>
       <input type="date" id="fecha" placeholder="dd-mm-aaaa"><br>
-    
+      <span id="error-fecha" class="error" style="color:red"></span>
+
       <label>Monto Total:</label>
-      <input type="number" id="monto" placeholder="000.0" step="0.01"><br>
-    
+      <input type="number" id="monto" placeholder="1000.01" step="0.01"><br>
+      <span id="error-monto" class="error" style="color:red"></span>
+
       <label>Nombre y Apellido:</label>
       <input type="text" id="nombre" placeholder="Juan Perez"><br>
-    
+      <span id="error-nombre" class="error" style="color:red"></span>
+
       <label>DNI:</label>
       <input type="text" id="dni" placeholder="12345678"><br>
-    
+      <span id="error-dni" class="error" style="color:red"></span>
+
       <label>Email:</label>
       <input type="email" id="email" placeholder="nombre@email.com"><br>
-    
+      <span id="error-email" class="error" style="color:red"></span>
+
       <button type="submit">Cargar Ticket</button>
     </form>
   

@@ -1,9 +1,7 @@
-/**Funciones para validar los siguientes campos: NombreyApellido, DNI, Email */
+//funciones para validar los campos
 
 function validarNyA(nya){
-    //Explicacion de la expresion regular
-        
-        const exreg=  /^(?!.*\s{2})[\p{L}'.-]{2,}(?:\s+[\p{L}'.-]{2,})+$/u;
+        const exreg =  /^(?!.*\s{2})[\p{L}'.-]{2,}(?:\s+[\p{L}'.-]{2,})+$/u;
         return exreg.test(nya.trim()); //retorna verdadero o falso si cumple con la expresion regular planteada en la linea anterior
                                //.trim elimina los espacios al principio o al final que pueda llegar a tener el string             
     }
@@ -34,7 +32,7 @@ function validarNyA(nya){
       
     function validarFechaConRegex(fecha) {
         // Formato esperado: AAAA-MM-DD
-        const exreg = /^2025-04-(0[1-9]|1[0-9]|2[0-2])$/;
+        const exreg = /^2025-04-(0[1-9]|1[0-9]|2[0-2])$/; //solo fechas del 1 al 22 de abril
         return exreg.test(fecha.trim());
       }
     
@@ -58,26 +56,46 @@ function validarNyA(nya){
         const esDNIValido=validarDNI(dni);
         const esEmailValido=validarEmail(email);
     
-        //muestro por consola pa verificar (BORRAR DESPUES Y HACERLO POR LA INTERFAZ)
+        //corroboro por consola que sean validos
         console.log('Número de ticket válido:', esNumeroValido);
         console.log('Monto válido:', esMontoValido);
         console.log('Fecha válida:', esFechaValida);
         console.log('Nombre y Apellido valido:', esNyAValido);
         console.log('DNI valido:', esDNIValido);
         console.log('Email valido:', esEmailValido);
-        //me aparecen errores por consola y no me sale si tuvo los datos validos
         
-        //si todo es valido se envia el form, agregar los de dani!!
     
-        if (esNyAValido && esDNIValido && esEmailValido && esNumeroValido && esMontoValido && esFechaValida) {
-            alert('✅ ¡Todos los datos son válidos! Guardando...');
-            // Aquí podrías guardar en TXT o hacer un fetch a tu backend
-          } else {
-            alert('❌ Algunos datos no son válidos. Por favor, revisalos.');
-            // También podrías mostrar qué campos fallaron si querés
-          }
-    });/**Funciones para validar los siguientes campos: NombreyApellido, DNI, Email */
+       // limpiar mensajes anteriores
+      document.querySelectorAll('.error').forEach(el => el.textContent = '');
 
+      // mostrar errores en pantalla
+      if (!esNyAValido) {
+          document.getElementById('error-nombre').textContent = '❌ Nombre y apellido inválido';
+      }
+      if (!esDNIValido) {
+          document.getElementById('error-dni').textContent = '❌ DNI inválido (solo números, 7 u 8 cifras)';
+      }
+      if (!esEmailValido) {
+          document.getElementById('error-email').textContent = '❌ Email inválido';
+      }
+      if (!esNumeroValido) {
+          document.getElementById('error-num-ticket').textContent = '❌ El número debe ser formato AA-00000';
+      }
+      if (!esMontoValido) {
+          document.getElementById('error-monto').textContent = '❌ Monto inválido (debe superar los 1000.00)';
+      }
+      if (!esFechaValida) {
+          document.getElementById('error-fecha').textContent = '❌ Solo se permiten fechas del 1 al 22 de abril del 2025';
+      }
+      if (esNyAValido && esDNIValido && esEmailValido && esNumeroValido && esMontoValido && esFechaValida) {
+        alert('✅ ¡Todos los datos son válidos! Guardando...');
+        document.getElementById('form-ticket').reset(); //limpia los campos
+        document.querySelectorAll('.error').forEach(el => el.textContent = ''); //limpio por las dudas los mensajes de error
+      } else {
+        alert('❌ Algunos datos no son válidos. Por favor, revisalos.');
+      }
+
+    });
 
     
     //movimiento de las pestañas
@@ -106,6 +124,5 @@ function validarNyA(nya){
    
     ///DOM
     document.addEventListener('DOMContentLoaded', function() {
-        openTab('cargar-ticket'); //LPM ME DA MUCHOS ERRORESSSSSSSSSSSSSS
-        
+        openTab('cargar-ticket'); 
     });

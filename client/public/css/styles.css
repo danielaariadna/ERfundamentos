@@ -14,17 +14,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px; /* Altura del navbar */
-  background-color: #D11C1C; /* Rojo sólido */
+  height: 80px; 
+  background-color: #D11C1C;
   display: flex;
-  /*justify-content: center;
-  align-items: center;
-  gap: 40px; lo comento porq todavia no hay nada, espacio entre íconos */
   z-index: 1; 
 }
 
-
-/* pestañas mejoradas */
+/*pestañas*/
 .tabs {
     display: flex;
     position: fixed;
@@ -69,8 +65,7 @@ body {
     border: none;
     width: 100%;
     max-width: 400px;
-    margin-top: 70px; /* Ajusta el margen superior para que quede debajo de las pestañas */
-    
+    margin-top: 70px;   
 }
 .tab-content, #form-ticket {
     background-color: transparent;
@@ -79,6 +74,7 @@ body {
     max-width: 600px;
 }
 
+/*formulario*/
 #form-ticket {
     margin-top: 100px;
     padding: 30px;
@@ -109,8 +105,8 @@ input::placeholder {
     font-style: normal; 
     opacity: 0.8;
   }
-/* Botones mejorados */
-#form-ticket button, #sorteo-btn {
+
+  #form-ticket button, #sorteo-btn {
     background-color: rgba(209, 28, 28, 0.9);
     color: white;
     border: none;
@@ -141,7 +137,8 @@ input::placeholder {
     margin: 90px auto;
 
 }
-/* Responsive */
+
+/* responsive */
 @media (max-width: 768px) {
     .tabs {
         flex-direction: column;
@@ -159,7 +156,6 @@ input::placeholder {
     }
 }
 
-/* Navbar mejorado */
 .navbar-left {
     display: flex;
     align-items: center;
